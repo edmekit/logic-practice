@@ -1,5 +1,26 @@
-for row in range(4):
-    print(" " * (4 - row), end="")
-    for col in range(row + 1):
-        print("* ", end="")
+rows = int(input("Enter how many rows:"))
+square = int(input("Enter how many square:"))
+rec = int(input("Enter how many rectangle:"))
+dia = int(input("Enter how many diamond:"))
+for i in range(rows):
+    print(" " * (rows - i - 1), end="")
+    for j in range(i + 1):
+        print("*", end=" ")
+    print()
+print()
+for s in range(square):
+    print("* " * square)
+print()
+for r in range(rec):
+    print("* " * (rec * 2))
+print()
+for d in range(dia):
+    print(" " * (dia - d - 1), end="")
+    for i in range(d + 1):
+        print("*", end=" ")
+    print()
+for d in range(dia - 1, -1, -1):
+    print(" " * (dia - d - 1), end="")
+    for i in range(d + 1):
+        print("*", end=" ")
     print()
