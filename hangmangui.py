@@ -72,8 +72,8 @@ def guesser():
             man.config(text=f"{hangman[err]}\n {" ".join(progress)}\n You win!")
         else:
             err += 1
-            man.config(text=f"{hangman[err]}\n {" ".join(progress)}")
-    if err == 7:
+            man.config(text=f"{hangman[err]}\n {" ".join(progress)}\n Incorrect word. Try again.")
+    if err == 6:
         man.config(text=f"{hangman[err]}\n {" ".join(progress)}\n You lose!")
     else:
         if guessers in guessed:
@@ -90,7 +90,9 @@ def guesser():
             man.config(text=f"{hangman[err]}\n {" ".join(progress)}\n Incorrect guess. Try again.")
     guessed.add(guessers)
 
-
+def restarter():
+    start_game()
+    man.config(text=f"{hangman[err]}\n {" ".join(progress)}")
 
 
 
@@ -99,12 +101,14 @@ window.title("Hangman")
 window.geometry("800x600")
 start = tk.Button(window, text="Start game", width=10, command=start_game)
 start.grid(row=0, column=0, padx=5, pady=5)
-man = tk.Label(window, text="hey", width=20, height=10)
+man = tk.Label(window, text="hey", width=50, height=10)
 man.grid(row=1, column=0, padx=5, pady=5,columnspan=2)
-enter_guess = tk.Entry(window, width=5)
+enter_guess = tk.Entry(window, width=15)
 enter_guess.grid(row=2, column=0, padx=5, pady=5)
 guess = tk.Button(window, text="guess", width=5, command=guesser)
 guess.grid(row=2, column=1, padx=5, pady=5)
+reset = tk.Button(window, text="reset", width=5, command=restarter)
+reset.grid(row=2, column=2, padx=5, pady=5)
 
 
 
