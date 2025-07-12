@@ -1,7 +1,8 @@
-rows = int(input("Enter how many rows:"))
-square = int(input("Enter how many square:"))
-rec = int(input("Enter how many rectangle:"))
-dia = int(input("Enter how many diamond:"))
+rows = int(input("Enter how many rows: "))
+square = int(input("Enter how many square: "))
+rec = int(input("Enter how many rectangle: "))
+dia = int(input("Enter how many diamond: "))
+ex = int(input("Enter how big x: "))
 for i in range(rows):
     print(" " * (rows - i - 1), end="")
     for j in range(i + 1):
@@ -24,3 +25,7 @@ for d in range(dia - 1, -1, -1):
     for i in range(d + 1):
         print("*", end=" ")
     print()
+
+for x in range(ex):
+    for j in range(ex):
+        
