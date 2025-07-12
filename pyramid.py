@@ -28,4 +28,9 @@ for d in range(dia - 1, -1, -1):
 
 for x in range(ex):
     for j in range(ex):
-        
+        if j == x or j == ex - x - 1:
+            print("*", end="")
+        else:
+            print(" ", end="")
+    print()
+    
